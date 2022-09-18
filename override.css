@@ -1,0 +1,13 @@
+.columns{
+	padding-left: 0px;
+}
+.twitter{
+	overflow: auto;
+	height: 430px;
+}
+.nine.columns {
+    width: 73%;
+}
+.three.columns {
+    width: 23%;
+}
