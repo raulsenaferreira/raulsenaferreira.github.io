@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Raul Sena Ferreira</title>
+  <meta name="description" content="">
+  <meta name="author" content="raul sena ferreira">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/skeleton.css">
+  <link rel="stylesheet" href="../css/custom.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+
+</head>
+<style type="text/css">
+  .row img{
+    float: none;
+    width: auto;
+  }
+</style>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <header>
+      <h5>Safe AI for autonomous vehicles</h5>
+    </header>
+    <div class="row">
+      ML-based perception functions (PF) such as emergency breaking systems or traffic signal detectors are key functions for autonomous systems. In these softwares, Machine learning (ML) models are the most important component of an PF. 
+      <br>However, ML models can give wrong predictions even with 99% of confidence, and verify all possible faults of these complex models is known to be infeasible. Therefore, there is a current urgence on the developement of runtime techniques for ensure the correct behavior of these safety-critical systems.
+      <br>
+      <img src="animations/safeai/sus.png"> 
+      <br>
+      <br>
+      My PhD research focused on developing Safety monitors for perception function. These monitors have the challenge to identify when a potential error of the ML model is about to happen.
+      Such challenging project is part of a huge Horizon 2020 European project called ETN-SAS <a href="https://etn-sas.eu/" target="_blank">(more details about the project here)</a>.
+      <br>
+      Below, you can find several articles, projects and softwares outputted from this ongoing research.
+
+      <hr>
+      <h5>SiMOOD: evolutionary testing SiMulation with Out-Of-Distribution images</h5>
+        Evaluating ML models in safety-critical scenarios is usually performed by analyzing metrics based on positive and negative rates over a dataset containing several perturbations.
+        However, using such metrics on such datasets can be misleading since not all OOD data lead to failures in the perception system. 
+        Hence, testing a perception system cannot be reduced to measuring ML performances on a dataset but rely on the images captured by the system at runtime.
+        However, the amount of time spent to generate diverse test cases during a simulation of perception components can grow quickly since it is a combinatorial optimization problem.
+        <br>
+        Aiming to provide a solution for this challenging task, we developed SiMOOD, an evolutionary simulation testing of safety-critical perception systems, which comes integrated into the CARLA simulator.
+        <br>
+        Unlike related works that propose to simulate scenarios that raise failures for control or specific perception problems such as adversarial and novelty, we provide an approach that finds the most relevant OOD perturbations that can lead to hazards in safety-critical perception systems.
+        Moreover, our approach can decrease, at least in 10 times, the amount of time required to find a set of hazards in safety-critical scenarios such as autonomous emergency braking system simulation.
+        Code is also publicly available.
+        <br>
+        We developed a live fault injection integration with CARLA containing 30 transformations with several levels of intensity and three types of OOD data:
+        Novelty classes, anomalies, distributional shift, and noise.
+        <br>
+        <embed src="animations/safeai/image32.gif" height="200px" width="300px">
+        <embed src="animations/safeai/carla_gaussian_noise.gif" height="200px" width="300px">
+        <br>
+        <b>Our paper uncovers several types of accidents in the simulation.</b>
+        <br>
+        More details can be found in our paper (July 2022).
+        <br>
+        <embed src="animations/safeai/image31.gif" height="200px" width="300px">
+        <embed src="animations/safeai/carla_grid_dropout_collision.gif" height="200px" width="300px">
+        <embed src="animations/safeai/carla_novelty_collision_2.gif" height="200px" width="300px">
+        <br>
+        
+        <hr>
+        <div id="benchmarking">
+          <h5>Benchmarking Safety Monitors for ML-based Image Classifiers</h5>
+          This work aims at establishing a baseline framework for benchmarking monitors for ML image classifiers. Furthermore, we propose a framework covering the entire pipeline, from data generation to evaluation.
+          Our approach measures monitor performance with a broader set of metrics than usually proposed in the literature. Moreover, we benchmark three different monitor approaches in 79 benchmark datasets containing five categories of out-of-distribution data for image classifiers: class novelty, noise, anomalies, distributional shifts, and adversarial attacks:
+          <br>
+          <img src="animations/safeai/threats.png"  width="300px"> 
+          <br>
+          <b> We also publicly released the code. </b>
+          <br>
+          More details can be found in our paper accepted in the 26th IEEE Pacific Rim International Symposium on Dependable Computing (December 2021).
+          <br>
+          <img src="animations/safeai/architecture.png"  width="300px"> 
+          <br>
+        </div>
+    </div>
+    <footer><p>Under construction</p></footer>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

@@ -1,0 +1,51 @@
+body{
+
+}
+header{
+	background-color: black;
+	color: white;
+	text-align: center;
+	margin: auto;
+}
+hr{
+	margin-bottom: 0;
+}
+h5{
+	font-weight: bold;
+}
+h6{
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+.three{
+	
+}
+.nine{
+	
+}
+.photo {
+    
+}
+.photo img{
+	width: 200px;
+}
+.info h5 {
+    margin: 0;
+}
+.info h6 {
+    margin: 0;
+    padding-bottom: 10px;
+    font-weight: normal;
+}
+.columns {
+    padding-left: 15px;
+}
+.sep{
+	margin-top: 20px;
+}
+footer{
+	background-color: black;
+	color: white;
+	text-align: center;
+	margin: auto;
+}

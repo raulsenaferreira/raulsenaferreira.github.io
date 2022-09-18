@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Raul Sena Ferreira</title>
+  <meta name="description" content="">
+  <meta name="author" content="raul sena ferreira">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/skeleton.css">
+  <link rel="stylesheet" href="../css/custom.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+
+</head>
+<style type="text/css">
+  .row img{
+    float: right;
+  }
+</style>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <header>
+      <h5>Machine Learning in Non-stationary Environments</h5>
+    </header>
+    <div class="row">
+      Machine learning solutions usually consider that the train and test data has the same probabilistic distribution, that is, the data is stationary.
+      However, in streaming scenarios, data distribution generally change through the time, that is, the data is non-stationary.
+      The main challenge in such dynamic environment is the model adaptation for the constant drifts in data distribution.
+      <br>These drifts are known as <b>Concept-Drift</b>.
+      <br>
+      Other important restriction may happen in online scenarios: the extreme latency to verify the labels. Thus, semi-supervised solutions needs to deal with lack of labels. These scenarios are very common in robotics due to the expensive costs to obtain the labels. This problem also happens with datastreams from sensors.
+      <br>
+      My research focus on batch scenarios or datastream (one instance at time) environments.
+      My master thesis contains more details about the first outcomes of this research and can be <a href="https://www.cos.ufrj.br/uploadfile/publicacao/2852.pdf" target="_blank">accessed here</a>.
+      <br>
+
+      <hr>
+      <h5>Density-based approaches for selecting core samples</h5>
+      Selecting samples from core regions helps to keep the most important instances that represent the new distribution concepts is known as core support extraction (CSE).
+      We study about density-based algorithms applied in non-stationary environments against single semi-supervised approaches.
+      <br>
+      First results showed that a semi-supervised classifier is <b>improved up to 68%</b> on a real dataset when it is applied along with a density-based CSE algorithm.
+      For example, KDE and GMM are good approaches as CSE methods.
+      Between density approaches, KDE seems to be better since it has less parameters. 
+      <br>
+      <img src="img/kdeXgmm2.PNG" width="600px">
+      Besides, KDE has another advantage over GMM: the better spreading inside a distribution.
+      The Figure shows that KDE (on the left) gives the highest weights in a larger region than GMM (on the right). The purple points represents the core instances, that is, the most important instances to be used as a training instances for the next subsequent batch in an online semi-supervised scenario.
+      <br>
+      In our paper "<a href="#">Density-based Core Support Extraction for Non-stationary Environments with Extreme Verification Latency</a>", we explain these approaches in seventeen synthetic datasets and a real one, showing the strengths and weaknesses of these CSE methods through many metrics.  
+      <br>
+      
+      <hr>
+      <h5>AMANDA: A Density-based semi-supervised framework for non-stationary environments</h5>
+        The above study supported a bigger research about density-based algorithms for non-stationary environments.
+        Hence, we built a density-based adaptive framework for non-stationary data, denominated AMANDA, which uses a semi-supervised classifier along with a density-based CSE method.
+        AMANDA has two variations: AMANDA with a fixed cutting percentage (AMANDA-FCP); and AMANDA with a dynamic cutting percentage (AMANDA-DCP).
+        <br>
+        First results indicate that the two variations of AMANDA outperform the state-of-the-art methods for almost seventeen synthetic datasets and three real ones with an <b>improvement up to 28% regarding the average error</b>.
+        <br>
+        We have found that the use of AMANDA-FCP improved the results for a gradual concept-drift even with a small size of initial labeled data.
+        Moreover, our results indicate that SSL classifiers are improved when they work along with our static or dynamic CSE methods.
+        <br>
+        Our paper explaining how our method improved SSL classifiers on concept-drift scenarios and several other details was published in the journal <b>Information Sciences</b> <a href="https://www.sciencedirect.com/science/article/pii/S0020025519302233" target="_blank"> and can be acessed here</a>.
+        <br>
+        Below you find one of our study cases about AMANDA performance in a non-stationary environment where a minority class is surrounded by a majority class.
+        <br><b>The first video is a conventional semi-supervised learning (SSL) classifier with a sliding window approach. The second video is the AMANDA-DCP approach using the same SSL classifier. The last video is the AMANDA-FCP approach with the SSL</b>. 
+        <embed src="animations/1CSurr_animationSliding_SSL.mp4" autostart="false" height="200px" width="300px">
+        <embed src="animations/1CSurr_animationAMANDA_(Dynamic).mp4" autostart="false" height="200px" width="300px">
+        <embed src="animations/1CSurr_animationAMANDA_(Fixed).mp4" autostart="false" height="200px" width="300px">
+        
+        <br>
+        
+    </div>
+    <footer><p>Under construction</p></footer>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
